@@ -1,0 +1,22 @@
+name: iOS starter workflow
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: Build
+    runs-on: macos-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+        
+      - name: Set up Xcode
+        uses: maxim-lobanov/setup-xcode@v2
+        with:
+          xcode-version: '15.4'
+      
+      - name: Build and test
+        run: xcodebuild -scheme ApplePie -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.0' clean build test
+      
+      - name: Run SwiftLint
+        run: swiftlint
