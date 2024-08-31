@@ -14,10 +14,10 @@ jobs:
         uses: maxim-lobanov/setup-xcode@v1
         with:
           xcode-version: '15.4'
+
+      - name: Run SwiftLint
+        run: swiftlint
       
       - name: Build and test
         working-directory: ./ApplePie
         run: xcodebuild -scheme ApplePie -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.0' clean build test -allowProvisioningUpdates
-      
-      - name: Run SwiftLint
-        run: swiftlint
