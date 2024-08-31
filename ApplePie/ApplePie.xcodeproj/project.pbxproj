@@ -44,6 +44,7 @@
 		CDC8CA452C82EB17008D0CE0 /* ApplePieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApplePieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC8CA492C82EB17008D0CE0 /* ApplePieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePieUITests.swift; sourceTree = "<group>"; };
 		CDC8CA4B2C82EB17008D0CE0 /* ApplePieUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePieUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CDC8CA5D2C82F8CE008D0CE0 /* ApplePie.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; name = ApplePie.mobileprovision; path = ../../../../Downloads/ApplePie.mobileprovision; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +75,7 @@
 		CDC8CA222C82EB16008D0CE0 = {
 			isa = PBXGroup;
 			children = (
+				CDC8CA5D2C82F8CE008D0CE0 /* ApplePie.mobileprovision */,
 				CDC8CA2D2C82EB16008D0CE0 /* ApplePie */,
 				CDC8CA3E2C82EB17008D0CE0 /* ApplePieTests */,
 				CDC8CA482C82EB17008D0CE0 /* ApplePieUITests */,
@@ -135,6 +137,7 @@
 			buildConfigurationList = CDC8CA4F2C82EB17008D0CE0 /* Build configuration list for PBXNativeTarget "ApplePie" */;
 			buildPhases = (
 				CDC8CA272C82EB16008D0CE0 /* Sources */,
+				CDC8CA5E2C82F914008D0CE0 /* ShellScript */,
 				CDC8CA282C82EB16008D0CE0 /* Frameworks */,
 				CDC8CA292C82EB16008D0CE0 /* Resources */,
 			);
@@ -215,6 +218,9 @@
 				Base,
 			);
 			mainGroup = CDC8CA222C82EB16008D0CE0;
+			packageReferences = (
+				CDC8CA582C82F756008D0CE0 /* XCRemoteSwiftPackageReference "SwiftLint" */,
+			);
 			productRefGroup = CDC8CA2C2C82EB16008D0CE0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -251,6 +257,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CDC8CA5E2C82F914008D0CE0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CDC8CA272C82EB16008D0CE0 /* Sources */ = {
@@ -422,7 +448,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ApplePie/Preview Content\"";
-				DEVELOPMENT_TEAM = 4GFT6S3Q9D;
+				DEVELOPMENT_TEAM = F3T274UD9D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -435,7 +461,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.eduapinh.ApplePie;
+				PRODUCT_BUNDLE_IDENTIFIER = br.org.eldorado.applepietest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -451,7 +477,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ApplePie/Preview Content\"";
-				DEVELOPMENT_TEAM = 4GFT6S3Q9D;
+				DEVELOPMENT_TEAM = F3T274UD9D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -464,7 +490,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.eduapinh.ApplePie;
+				PRODUCT_BUNDLE_IDENTIFIER = br.org.eldorado.applepietest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -588,6 +614,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CDC8CA582C82F756008D0CE0 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/SwiftLint";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.56.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = CDC8CA232C82EB16008D0CE0 /* Project object */;
 }
